@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { reconJoinAction } from "../../store/recon-join-slice";
 import AllFieldSelector from "../AllFieldSelector/AllFieldSelector";
 
-const PrimaryKeySelection = () => {
+const RequiredKeySelection = () => {
   const dispatch = useDispatch();
 
   const changeField = (left, fields) => {
     const changer = left
-      ? reconJoinAction.changeSourcePK
-      : reconJoinAction.changeTargetPK;
+      ? reconJoinAction.changeSourceOrder
+      : reconJoinAction.changeTargetOrder;
 
     console.log(fields);
     dispatch(changer(fields));
@@ -18,12 +18,12 @@ const PrimaryKeySelection = () => {
   return (
     <div>
       <AllFieldSelector
-        title="Primary Key Selection"
-        fieldKey="PK"
+        title="Required Fields"
+        fieldKey="RF"
         onSelection={changeField}
       />
     </div>
   );
 };
 
-export default PrimaryKeySelection;
+export default RequiredKeySelection;

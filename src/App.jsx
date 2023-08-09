@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Services from "./components/Services/Services";
 import Home from "./components/Home/Home";
 import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home'
 
 function App() {
   const [isHome, setIsHome] = useState(true);
@@ -57,7 +58,7 @@ function App() {
   const loginHandler = (credentials) => {
     //Add login auhtnetication here
     if (
-      credentials.username === "admin@123" &&
+      credentials.username === "admin@deloitte.com" &&
       credentials.password === "admin123"
     ) {
       setIsLoggedIn((prevState) => {
@@ -77,9 +78,7 @@ function App() {
     navbarStateChanger("home");
   };
 
-  // let content = <p><b>Welcome home</b></p>;
-
-  let content = <Home />;
+  let content = <p><b>Welcome homes</b></p>;
 
   if (isLoggedIn) {
     content = <Services />;
